@@ -1,0 +1,108 @@
+
+#include <iostream>
+using namespace std;
+
+// Node structure
+struct Node {
+    int data;
+    Node* prev;
+    Node* next;
+};
+
+int main() {
+
+    Node* head = NULL;
+    Node* temp;
+    Node* newNode;
+
+    int choice, value;
+
+    do {
+
+        cout << "\n1. Insert";
+        cout << "\n2. Display Forward";
+        cout << "\n3. Display Backward";
+        cout << "\n4. Exit";
+
+        cout << "\nEnter choice: ";
+        cin >> choice;
+
+        // INSERT
+        if (choice == 1) {
+
+            newNode = new Node();
+
+            cout << "Enter value: ";
+            cin >> value;
+
+            newNode->data = value;
+            newNode->prev = NULL;
+            newNode->next = NULL;
+
+            // First node
+            if (head == NULL) {
+                head = newNode;
+            }
+
+            else {
+
+                temp = head;
+
+                // Move to last node
+                while (temp->next != NULL) {
+                    temp = temp->next;
+                }
+
+                temp->next = newNode;
+                newNode->prev = temp;
+            }
+
+            cout << "Node Inserted!";
+        }
+
+        // DISPLAY FORWARD
+        else if (choice == 2) {
+
+            temp = head;
+
+            while (temp != NULL) {
+                cout << temp->data << " ";
+                temp = temp->next;
+            }
+
+        }
+
+        // DISPLAY BACKWARD
+        else if (choice == 3) {
+
+            temp = head;
+
+            if (temp == NULL) {
+                cout << "List is empty!";
+            }
+            else {
+
+                while (temp->next != NULL) {
+                    temp = temp->next;
+                }
+
+                while (temp != NULL) {
+                    cout << temp->data << " ";
+                    temp = temp->prev;
+                }
+            }
+
+        }
+
+        else if (choice == 4) {
+            cout << "Program Ended!";
+        }
+
+        else {
+            cout << "Invalid Choice!";
+        }
+
+    } while (choice != 4);
+
+    return 0;
+}
