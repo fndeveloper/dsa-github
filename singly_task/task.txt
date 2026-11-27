@@ -1,0 +1,15 @@
+### **Question 1 — Singly Linked List (10 Marks)**
+
+Write a C++ program to create a singly linked list containing **five nodes**. Each node should store a student's name and a pointer to the next node.
+
+Your program should:
+
+- Insert five nodes into the linked list.
+- Display all student names using a `while` loop.
+- Display the memory address of each node.
+- Count and display the total number of nodes.
+- Display the address stored in the `next` pointer of the last node.
+
+**Note:** Use `struct Node`, dynamic memory allocation (`new`), and pointer-based traversal.
+
+*Solve it yourself as you would in a university exam. Send me your code, and I'll check it like an examiner.*

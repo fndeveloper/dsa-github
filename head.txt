@@ -2,45 +2,115 @@
 #include <iostream>
 using namespace std;
 
-// Step 1: Create Node
-struct Node {
-    int data;
-    Node* next;
+struct student {
+    string name;
+    student* next;
 };
-// int num = 10;
-// int* ptr = &num;
-
 
 int main() {
 
-    // Step 2: Create HEAD
-    Node* head = nullptr;
+    // Initially head points to nullptr
+    student* head = nullptr;
 
-    // Step 3: Create First Node
-    Node* first = new Node();
-    first->data = 10;
-    first->next = nullptr;
 
-    // Step 4: Connect HEAD with First Node
-    head = first;
+    // ========== FIRST NODE START ==========
 
-    // Step 5: Create Second Node
-    Node* second = new Node();
-    second->data = 20;
-    second->next = nullptr;
+    student* first = new student();
 
-    // Step 6: Connect First Node with Second Node
-    first->next = second;
+    first->name = "Fasih";
 
-    // Step 7: Display Linked List
-    Node* temp = head;
+    first->next = head;
+
+    head = first;  // Head now points to first node
+
+    // ========== FIRST NODE END ==========
+
+
+    // ========== SECOND NODE START ==========
+
+    student* second = new student();
+
+    second->name = "Fasih";
+
+    second->next = head;
+
+    head = second; // Head now points to second node
+
+    // ========== SECOND NODE END ==========
+
+
+    // ========== THIRD NODE START ==========
+
+    student* third = new student();
+
+    third->name = "Ammar";
+
+    third->next = head;
+
+    head = third; // Head now points to third node
+
+    // ========== THIRD NODE END ==========
+
+
+    // ========== FOURTH NODE START ==========
+
+    student* fourth = new student();
+
+    fourth->name = "Mehdi";
+
+    fourth->next = head;
+
+    head = fourth; // Head now points to fourth node
+
+    // ========== FOURTH NODE END ==========
+
+
+    // ========== FIFTH NODE START ==========
+
+    student* fifth = new student();
+
+    fifth->name = "Abrar";
+
+    fifth->next = head;
+
+    head = fifth; // Head now points to fifth node
+
+    // ========== FIFTH NODE END ==========
+
+
+    // ========== TRAVERSAL START ==========
+
+    student* temp = head;
+
+    int count = 0;
 
     while (temp != nullptr) {
-        cout << temp->data << " -> ";
+
+        cout << "Student Name: " << temp->name << endl;
+
+        cout << "Node Address: " << temp << endl;
+
+        cout << "Next Address: " << temp->next << endl;
+
+        cout << "------------------------" << endl;
+
+        count++;
+
         temp = temp->next;
     }
 
-    cout << "NULL";
+    // ========== TRAVERSAL END ==========
+
+
+    // Display total nodes
+
+    cout << "Total Nodes: " << count << endl;
+
+
+    // Last node's next address is nullptr
+
+    cout << "Last Node Next Address: " << temp << endl;
+
 
     return 0;
 }

@@ -1,50 +1,74 @@
-#include <iostream>
 
+#include <iostream>
 using namespace std;
 
-struct Node
-{
-string name;
-Node* next;
+struct student {
+    string name;
+    student* next;
 };
 
-int main(){
+int main() {
 
-    Node* p=nullptr;
-   
-     Node* first=new Node();
-     first->name="first";
-     first->next=nullptr;
-     p=first;
-cout << "First Address : " << first << endl;
+    // Initially head is nullptr
+    student* head = nullptr;
 
+    // ========== FIRST NODE ==========
+    student* first = new student();
 
-       Node* second=new Node();
-     second->name="Secomd";
-     second->next=nullptr;
+    first->name = "Fasih";
+    first->next = nullptr;
 
-     first->next=second;
-cout << "Second Address : " << second << endl;
-
-       Node* third=new Node();
-     third->name="Fasih 2";
-     third->next=nullptr;
-     second->next=third;
-cout << "Third Address : " << third << endl;
-
-   
-Node* i=p;
-
-cout << "Before Loop " << i << endl;
-
-while (i != nullptr)
-{
-   cout << i->name << endl;
-   i=i->next;
-
-   cout << i << endl;
-}
-cout << "After Loop " << i << endl;
+    head = first;  // Head points to first node
 
 
+    // ========== SECOND NODE ==========
+    student* second = new student();
+
+    second->name = "Fasih";
+    second->next = nullptr;
+
+    first->next = second;  // Connect first to second
+
+
+    // ========== THIRD NODE ==========
+    student* third = new student();
+
+    third->name = "Ammar";
+    third->next = nullptr;
+
+    second->next = third;  // Connect second to third
+
+
+    // ========== FOURTH NODE ==========
+    student* fourth = new student();
+
+    fourth->name = "Mehdi";
+    fourth->next = nullptr;
+
+    third->next = fourth;  // Connect third to fourth
+
+
+    // ========== FIFTH NODE ==========
+    student* fifth = new student();
+
+    fifth->name = "Abrar";
+    fifth->next = nullptr;
+
+    fourth->next = fifth;  // Connect fourth to fifth
+
+
+    // ========== TRAVERSAL ==========
+
+    student* temp = head;
+
+    while (temp != nullptr) {
+
+        cout << temp->name << " -> ";
+
+        temp = temp->next;
+    }
+
+    cout << "nullptr";
+
+    return 0;
 }
