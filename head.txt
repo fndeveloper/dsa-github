@@ -1,0 +1,46 @@
+
+#include <iostream>
+using namespace std;
+
+// Step 1: Create Node
+struct Node {
+    int data;
+    Node* next;
+};
+// int num = 10;
+// int* ptr = &num;
+
+
+int main() {
+
+    // Step 2: Create HEAD
+    Node* head = nullptr;
+
+    // Step 3: Create First Node
+    Node* first = new Node();
+    first->data = 10;
+    first->next = nullptr;
+
+    // Step 4: Connect HEAD with First Node
+    head = first;
+
+    // Step 5: Create Second Node
+    Node* second = new Node();
+    second->data = 20;
+    second->next = nullptr;
+
+    // Step 6: Connect First Node with Second Node
+    first->next = second;
+
+    // Step 7: Display Linked List
+    Node* temp = head;
+
+    while (temp != nullptr) {
+        cout << temp->data << " -> ";
+        temp = temp->next;
+    }
+
+    cout << "NULL";
+
+    return 0;
+}
